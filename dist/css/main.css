@@ -65,7 +65,7 @@ h1::after {
 }
 
 .main-header a > img {
-  width: 10vw;
+  width: auto;
   height: 20vh;
 }
 
