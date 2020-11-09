@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import 'hero';
 @import 'header';
 @import 'media';
@@ -16,7 +17,7 @@ body {
 
 .container {
     width: 80%;
-    margin: 2rem auto;
+    // margin: 2rem auto;
 }
 
 p {
