@@ -76,6 +76,8 @@ section {
 .main-grid-item {
     position: relative;
     display: flex;
+    padding-right: 2rem;
+    padding-left: 2rem;
     flex-direction: column;
     justify-content: center;
     z-index: 1;
@@ -93,8 +95,8 @@ section {
 
 .main-grid h1 {
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 3rem;
+    font-weight: 400;
+    font-size: 2.8rem;
     margin: 1rem 0;
 }
 
@@ -115,7 +117,7 @@ section {
     font-weight: bold;
     display: block;
     margin-top: 2rem;
-    padding: .5rem .5rem;
+    padding: .8rem .5rem;
     text-transform: uppercase;
     transition: 650ms;
     // align-self: center;

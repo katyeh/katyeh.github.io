@@ -4,6 +4,7 @@
 @import 'header';
 @import 'media';
 @import 'animations';
+@import 'footer';
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -17,6 +18,7 @@ body {
 
 .container {
     width: 80%;
+    position: relative;
     // margin: 2rem auto;
 }
 

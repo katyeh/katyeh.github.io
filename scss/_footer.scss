@@ -1,0 +1,27 @@
+footer {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    background-color: black;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    // position: fixed;
+}
+
+.social-links ul {
+    display: flex;
+}
+
+.social-list__item {
+    list-style: none;
+}
+
+.social-list__link {
+    padding: 10px 20px;
+    font-size: 2rem;
+    color: #fff;
+}

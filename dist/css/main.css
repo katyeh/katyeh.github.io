@@ -77,6 +77,8 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-right: 2rem;
+  padding-left: 2rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -99,8 +101,8 @@ section {
 
 .main-grid h1 {
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  font-size: 3rem;
+  font-weight: 400;
+  font-size: 2.8rem;
   margin: 1rem 0;
 }
 
@@ -121,7 +123,7 @@ section {
   font-weight: bold;
   display: block;
   margin-top: 2rem;
-  padding: .5rem .5rem;
+  padding: .8rem .5rem;
   text-transform: uppercase;
   -webkit-transition: 650ms;
   transition: 650ms;
@@ -568,6 +570,39 @@ section {
   }
 }
 
+footer {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  background-color: black;
+}
+
+.social-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.social-links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.social-list__item {
+  list-style: none;
+}
+
+.social-list__link {
+  padding: 10px 20px;
+  font-size: 2rem;
+  color: #fff;
+}
+
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -581,6 +616,7 @@ body {
 
 .container {
   width: 80%;
+  position: relative;
 }
 
 p {
