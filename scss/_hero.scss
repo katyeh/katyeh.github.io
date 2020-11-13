@@ -13,7 +13,7 @@ section {
         justify-content: center;
         height: auto;
         position: relative;
-        padding-bottom: 5%;
+        // padding-bottom: 5%;
         // top: 4rem;
     }
 
@@ -26,7 +26,9 @@ section {
 
     img {
         width: 100%;
+        height: auto;
         max-width: 50rem;
+        padding-bottom: 5%;
     }
 }
 

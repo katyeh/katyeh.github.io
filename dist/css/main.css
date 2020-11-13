@@ -20,7 +20,6 @@ section {
           justify-content: center;
   height: auto;
   position: relative;
-  padding-bottom: 5%;
 }
 
 .container .my-pic {
@@ -31,7 +30,9 @@ section {
 
 .container img {
   width: 100%;
+  height: auto;
   max-width: 50rem;
+  padding-bottom: 5%;
 }
 
 .hero {
