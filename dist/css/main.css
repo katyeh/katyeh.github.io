@@ -385,6 +385,10 @@ section {
   }
 }
 
+section.about-me {
+  margin-top: 5rem;
+}
+
 @-webkit-keyframes pulse {
   from {
     -webkit-box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.6);
@@ -606,6 +610,13 @@ footer {
   padding: 10px 20px;
   font-size: 2rem;
   color: #fff;
+}
+
+.about-me {
+  width: 100%;
+  height: 80vh;
+  padding: 5rem 5rem;
+  margin: 0;
 }
 
 *, *::before, *::after {
