@@ -2,7 +2,7 @@ section {
     padding: 5rem 0;
 }
 
-.container {
+.logo-container {
     width: 100%;
     max-width: 98rem;
     margin: 0 auto;
@@ -49,6 +49,7 @@ section {
     // url("images/header-bg.jpg") center no-repeat;
     // background-size: cover;
     position: relative;
+    margin-bottom: 8rem;
 }
 
 .hero::before {

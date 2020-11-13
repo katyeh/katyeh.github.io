@@ -4,14 +4,14 @@ section {
   padding: 5rem 0;
 }
 
-.container {
+.logo-container {
   width: 100%;
   max-width: 98rem;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-.container .logo {
+.logo-container .logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,13 +26,13 @@ section {
   /* new */
 }
 
-.container .my-pic {
+.logo-container .my-pic {
   position: relative;
   width: 100%;
   max-width: 20rem;
 }
 
-.container img {
+.logo-container img {
   width: 100%;
   height: auto;
   max-width: 50rem;
@@ -43,6 +43,7 @@ section {
   width: 100%;
   height: 80vh;
   position: relative;
+  margin-bottom: 8rem;
 }
 
 .hero::before {
@@ -385,10 +386,6 @@ section {
   }
 }
 
-section.about-me {
-  margin-top: 5rem;
-}
-
 @-webkit-keyframes pulse {
   from {
     -webkit-box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.6);
@@ -615,8 +612,50 @@ footer {
 .about-me {
   width: 100%;
   height: 80vh;
-  padding: 5rem 5rem;
   margin: 0;
+}
+
+.about-me h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.about-me h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  letter-spacing: 5%;
+}
+
+.about-me p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+}
+
+.about-img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about-img-container img {
+  position: relative;
+  width: 100%;
+  max-width: 30rem;
+}
+
+.about-me__body {
+  padding: 5rem;
 }
 
 *, *::before, *::after {
@@ -630,7 +669,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.container {
+.logo-container {
   width: 80%;
   position: relative;
 }
