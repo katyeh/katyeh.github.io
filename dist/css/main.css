@@ -20,6 +20,10 @@ section {
           justify-content: center;
   height: auto;
   position: relative;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  /* new */
 }
 
 .container .my-pic {
