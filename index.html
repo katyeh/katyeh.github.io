@@ -26,16 +26,16 @@
                 <a href="#home">Home</a>
             </li>
             <li class="nav-link">
+                <a href="#blog">Blog</a>
+            </li>
+            <li class="nav-link">
                 <a href="#about">About</a>
             </li>
             <li class="nav-link">
                 <a href="#portfolio">Portfolio</a>
             </li>
             <li class="nav-link">
-                <a href="#">Blog</a>
-            </li>
-            <li class="nav-link">
-                <a href="#">Contact</a>
+                <a href="#contact">Contact</a>
             </li>
         </ul>
     </header>
@@ -65,6 +65,74 @@
         </div>
     </section>
 
+    <!-- wave -->
+    <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: darkgray;"></path></svg></div>
+
+    <!-- Blog -->
+    <section class="blog" id="blog">
+        <h1 class="section-title">Blog</h1>
+        <div class="blog__container bd-grid">
+                <div class="blog__content">
+                   <a href="#"><img src="dist/img/stock2.jpg" alt="" class="blog__img"></a>
+                       <div class="blog__data">
+                            <a href="#" class="blog__title"><h2 class="blog__title">My Experience with Bootcamp</h2></a>
+                            <!-- <span class="blog__summary">How I got started and an intro to my journey in coding.</span> -->
+                            <div class="blog-item-excerpt">
+                                <p>How I got started and an intro to my journey in coding.</p>
+                            </div>
+                            <div class="read-more">
+                                <a href="#" class="read-more-btn">Read More --></a>
+                            </div>
+                            <span class="blog-item-info">
+                                <a href="#blog" class=blog-item--author>Kathleen Yeh</a>
+                                <span>∙</span>
+                                <time class="blog-item-date" datetime="2020-11-20">November 20, 2020</time>
+                            </span>
+                        </div>
+                </div>
+                <div class="blog__content">
+                    <a href="#"><img src="dist/img/stock2.jpg" alt="" class="blog__img"></a>
+                        <div class="blog__data">
+                             <a href="#" class="blog__title"><h2 class="blog__title">My Experience with Bootcamp</h2></a>
+                             <!-- <span class="blog__summary">How I got started and an intro to my journey in coding.</span> -->
+                             <div class="blog-item-excerpt">
+                                 <p>How I got started and an intro to my journey in coding.</p>
+                             </div>
+                             <div class="read-more">
+                                 <a href="#" class="read-more-btn">Read More --></a>
+                             </div>
+                             <span class="blog-item-info">
+                                 <a href="#blog" class=blog-item--author>Kathleen Yeh</a>
+                                 <span>∙</span>
+                                 <time class="blog-item-date" datetime="2020-11-20">November 20, 2020</time>
+                             </span>
+                         </div>
+                 </div>
+                 <div class="blog__content">
+                    <a href="#"><img src="dist/img/stock2.jpg" alt="" class="blog__img"></a>
+                        <div class="blog__data">
+                             <a href="#" class="blog__title"><h2 class="blog__title">My Experience with Bootcamp</h2></a>
+                             <!-- <span class="blog__summary">How I got started and an intro to my journey in coding.</span> -->
+                             <div class="blog-item-excerpt">
+                                 <p>How I got started and an intro to my journey in coding.</p>
+                             </div>
+                             <div class="read-more">
+                                 <a href="#" class="read-more-btn">Read More --></a>
+                             </div>
+                             <span class="blog-item-info">
+                                 <a href="#blog" class=blog-item--author>Kathleen Yeh</a>
+                                 <span>∙</span>
+                                 <time class="blog-item-date" datetime="2020-11-20">November 20, 2020</time>
+                             </span>
+                         </div>
+                 </div>
+        </div>
+    </section>
+
+    <!-- wave -->
+    <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: darkgray;"></path></svg></div>
+
+
     <!-- About me -->
     <section class="about-me" id="about">
         <h1 class="section-title">About</h1>
@@ -81,6 +149,7 @@
         </div>
     </section>
 
+    <!-- Portfolio -->
     <section class="portfolio" id="portfolio">
         <h1 class="section-title">Portfolio</h1>
 
@@ -112,6 +181,33 @@
                     </div>
              </div>
 
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h1 class="section-title">Contact</h1>
+        <h3 class="section-subtitle">Let's get in touch!</h3>
+
+        <div class="contact-break__container">
+            <hr class="contact-break">
+        </div>
+
+        <div class="contact__container">
+            <form action="index.html" class="contact-form" method="post">
+                <label for="name">Name</label>
+                <fieldset class="name__container">
+                    <input type="text" class="contact-form-text first-name" placeholder="First Name" required>
+                    <input type="text" class="contact-form-text last-name" placeholder="Last Name" required>
+                </fieldset>
+                <label for="name">Email Address</label>
+                <input type="text" class="contact-form-text" placeholder="Email Address" required>
+                <label for="name">Subject</label>
+                <input type="text" class="contact-form-text" placeholder="Subject" required>
+                <label for="name">Message</label>
+                <textarea class="contact-form-text" placeholder="Message" required></textarea>
+                <input type="submit" class="contact-form-btn" value="Submit">
+            </form>
         </div>
     </section>
 
