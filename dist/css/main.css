@@ -108,25 +108,30 @@ section {
 .main-grid h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   margin: 1rem 0;
 }
 
 .main-grid h4 {
   font-family: 'Roboto', sans-serif;
   font-weight: 200;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .main-grid p {
   text-transform: lowercase;
 }
 
-.cv-btn {
-  width: 50%;
+.button {
+  display: inline-block;
+  max-width: 50%;
   color: #000;
   background-color: #fff;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: .25rem;
   font-weight: bold;
+  text-align: center;
   display: block;
   margin-top: 2rem;
   padding: .8rem .5rem;
@@ -611,7 +616,6 @@ footer {
 
 .about-me {
   width: 100%;
-  height: 80vh;
   margin: 0;
 }
 
@@ -622,10 +626,6 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 200;
-  font-size: 2rem;
-  margin: 1rem 0;
 }
 
 .about-me h3 {
@@ -646,16 +646,26 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  /* new */
 }
 
 .about-img-container img {
   position: relative;
+  height: auto;
   width: 100%;
   max-width: 30rem;
 }
 
 .about-me__body {
   padding: 5rem;
+}
+
+.portfolio {
+  width: 100%;
+  margin: 0;
 }
 
 *, *::before, *::after {
@@ -672,6 +682,13 @@ body {
 .logo-container {
   width: 80%;
   position: relative;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  font-size: 2rem;
+  margin: 1rem 0;
 }
 
 p {

@@ -100,25 +100,30 @@ section {
 .main-grid h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     margin: 1rem 0;
 }
 
 .main-grid h4 {
     font-family: 'Roboto', sans-serif;
     font-weight: 200;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .main-grid p {
     text-transform: lowercase;
 }
 
-.cv-btn {
-    width: 50%;
+.button {
+    display: inline-block;
+    max-width: 50%;
     color: #000;
     background-color: #fff;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: .25rem;
     font-weight: bold;
+    text-align: center;
     display: block;
     margin-top: 2rem;
     padding: .8rem .5rem;
