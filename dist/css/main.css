@@ -389,6 +389,9 @@ section {
   .hero h1 {
     font-size: 2rem;
   }
+  .about-me__body {
+    padding: 0;
+  }
 }
 
 @-webkit-keyframes pulse {
@@ -582,11 +585,10 @@ section {
 }
 
 footer {
-  position: fixed;
   margin: 0;
   padding: 0;
   bottom: 0;
-  background-color: black;
+  background-color: #fff;
 }
 
 .social-links {
@@ -610,8 +612,8 @@ footer {
 
 .social-list__link {
   padding: 10px 20px;
-  font-size: 2rem;
-  color: #fff;
+  font-size: 1.5rem;
+  color: #000;
 }
 
 .about-me {
@@ -619,18 +621,10 @@ footer {
   margin: 0;
 }
 
-.about-me h1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .about-me h3 {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  font-size: 1.5rem;
   letter-spacing: 5%;
 }
 
@@ -660,12 +654,84 @@ footer {
 }
 
 .about-me__body {
-  padding: 5rem;
+  padding: 5% 20%;
 }
 
 .portfolio {
   width: 100%;
   margin: 0;
+}
+
+.portfolio__item {
+  margin: 0;
+  cursor: pointer;
+}
+
+.portfolio__content {
+  background-color: #fff;
+  border-radius: .5rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0 4px 6px rgba(101, 168, 230, 0.699);
+          box-shadow: 0 4px 6px rgba(101, 168, 230, 0.699);
+  margin: 1rem;
+}
+
+.portfolio__img {
+  width: 100%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.portfolio__data {
+  padding: 1.5rem;
+}
+
+.portfolio__data a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  border: none;
+}
+
+.portfolio__subtitle {
+  font-size: large;
+  color: darkgray;
+}
+
+.portfolio__title {
+  font-size: x-large;
+  color: #000;
+  margin: 1rem 0;
+  text-decoration: none;
+}
+
+.portfolio__content:hover {
+  -webkit-box-shadow: 0 6px 8px rga(174, 190, 205, 0.4);
+          box-shadow: 0 6px 8px rga(174, 190, 205, 0.4);
+}
+
+.portfolio__content:hover .portfolio__img {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.button-link {
+  background: none;
+  color: #000;
+  padding: 0;
+}
+
+.button-link:hover {
+  background: none;
+}
+
+.bd-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  padding: 0 5rem;
 }
 
 *, *::before, *::after {
@@ -682,6 +748,19 @@ body {
 .logo-container {
   width: 80%;
   position: relative;
+}
+
+.section-title {
+  font-size: xx-large;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
 }
 
 h1 {

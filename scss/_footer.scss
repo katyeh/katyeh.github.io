@@ -1,9 +1,9 @@
 footer {
-    position: fixed;
+    // position: fixed;
     margin: 0;
     padding: 0;
     bottom: 0;
-    background-color: black;
+    background-color: #fff;;
 }
 
 .social-links {
@@ -22,6 +22,6 @@ footer {
 
 .social-list__link {
     padding: 10px 20px;
-    font-size: 2rem;
-    color: #fff;
+    font-size: 1.5rem;
+    color: #000;
 }

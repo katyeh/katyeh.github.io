@@ -4,18 +4,10 @@
     // padding: 5rem 10rem;
     margin: 0;
 
-    h1 {
-        display: flex;
-        justify-content: center;
-        // font-family: 'Roboto', sans-serif;
-        // font-weight: 200;
-        // font-size: 2rem;
-        // margin: 1rem 0;
-    }
-
     h3 {
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
+        font-size: 1.5rem;
         letter-spacing: 5%;
     }
 
@@ -40,7 +32,7 @@
 }
 
 .about-me__body {
-    padding: 5rem;
+    padding: 5% 20%;
 }
 
 .portfolio {
