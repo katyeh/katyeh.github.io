@@ -58,6 +58,7 @@
 
 .bd-grid {
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: 1rem;
     padding: 0 5rem;
