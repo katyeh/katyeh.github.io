@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-section {
+.hero, .blog {
   padding: 5rem 0;
 }
 
@@ -625,6 +625,9 @@ footer {
 }
 
 .about-me h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
