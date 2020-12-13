@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <meta name="referrer" content="origin">
+    <link rel="stylesheet" href="../dist/css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <title>hellokat</title>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <a href="#">
+                <img class="logoImg" src="../dist/img/logo-plain.PNG">
+            </a>
+        </div>
+
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="menu-icon__line"></span>
+        </label>
+
+        <ul class="nav-links">
+            <li class="nav-link">
+                <a class="menu-link" href="#home">Home</a>
+            </li>
+            <li class="nav-link">
+                <a class="menu-link" href="#blog">Blog</a>
+            </li>
+            <li class="nav-link">
+                <a class="menu-link" href="#about">About</a>
+            </li>
+            <li class="nav-link">
+                <a class="menu-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-link">
+                <a class="menu-link" href="#contact">Contact</a>
+            </li>
+        </ul>
+    </header>
+
+    <!-- Introduction -->
+    <section class="hero" id="home">
+        <section class="blog">
+            <h1>Header</h1>
+        </section>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h1 class="section-title">Contact</h1>
+        <h3 class="section-subtitle">Let's get in touch!</h3>
+
+        <div class="contact-break__container">
+            <hr class="contact-break">
+        </div>
+
+        <div class="contact__container">
+            <form action="https://formspree.io/f/xrgolyly" class="contact-form" method="post">
+                <label for="name">Name</label>
+                <fieldset class="name__container">
+                    <input type="text" name="fname" class="contact-form-text first-name" placeholder="First Name" required>
+                    <input type="text" name="lname" class="contact-form-text last-name" placeholder="Last Name" required>
+                </fieldset>
+                <label for="name">Email Address</label>
+                <input type="text" name="_replyto" class="contact-form-text" placeholder="Email Address" required>
+                <label for="name">Subject</label>
+                <input type="text" name="_subject" class="contact-form-text" placeholder="Subject" required>
+                <label for="name">Message</label>
+                <textarea class="contact-form-text" name="_message" placeholder="Message" required></textarea>
+                <input type="submit" class="contact-form-btn" value="Submit">
+            </form>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer class="footer">
+         <div class="social-links">
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/katyeh">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="mailto:kathleenyeh1@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="tel:206-604-2354">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/katyeh/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://angel.co/u/kathleen-yeh-1">
+                        <i class="fab fa-angellist"></i>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </footer>
+
+    <script src="dist/js/main.js"></script>
+    <script src="dist/js/menu.js"></script>
+</body>
+</html>

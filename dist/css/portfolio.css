@@ -18,6 +18,10 @@
   transition: .4s;
 }
 
+.readium__img {
+  min-height: 23rem;
+}
+
 .portfolio__data {
   padding: 1.5rem;
 }
