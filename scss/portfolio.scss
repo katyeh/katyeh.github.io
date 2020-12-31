@@ -9,16 +9,19 @@
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(101, 168, 230, 0.699);
     margin: 1rem;
+    max-height: 25rem;
 }
 
 .portfolio__img {
     width: 100%;
     transition: .4s;
+    max-height: 10rem;
+    object-fit: cover;
 }
 
-.readium__img {
-    min-height: 23rem;
-}
+// .readium__img {
+//     min-height: 23rem;
+// }
 
 .portfolio__data {
     padding: 1.5rem;
