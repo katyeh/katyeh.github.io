@@ -127,7 +127,7 @@
   display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  max-width: 55%;
+  max-width: 60%;
   color: #000;
   background-color: #fff;
   text-decoration: none;
@@ -680,14 +680,14 @@ footer {
   -webkit-box-shadow: 0 4px 6px rgba(101, 168, 230, 0.699);
           box-shadow: 0 4px 6px rgba(101, 168, 230, 0.699);
   margin: 1rem;
-  max-height: 25rem;
+  max-height: 30rem;
 }
 
 .portfolio__img {
   width: 100%;
   -webkit-transition: .4s;
   transition: .4s;
-  max-height: 10rem;
+  max-height: 14rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
