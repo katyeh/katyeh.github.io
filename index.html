@@ -1,260 +1,493 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <meta name="referrer" content="origin">
-    <meta property="og:image" content="https://portfolio-kat.s3-us-west-1.amazonaws.com/portfoliokat.png" />
-    <meta property="og:url" content="https://www.hellokat.io" />
-    <meta property="og:description" content="Responsive portfolio site built using HTML, SCSS and JavaScript." />
-    <link rel="stylesheet" href="dist/css/main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-    <title>hellokat</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="Kat Yeh" />
+<meta property="og:description" content="Software engineer building at the intersection of AI, product, and systems." />
+<meta property="og:url" content="https://katyeh.github.io" />
+<title>Kat Yeh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: #f3ede2;
+    color: #15140f;
+    font-family: "Newsreader", Georgia, serif;
+    font-feature-settings: "ss01" 1;
+  }
+
+  *::-webkit-scrollbar { width: 10px; height: 10px; }
+  *::-webkit-scrollbar-track { background: transparent; }
+  *::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 6px; }
+  *::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.25); }
+
+  /* Shell */
+  .site {
+    padding: 64px 80px 128px;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  /* Topbar */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(21,20,15,0.14);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: #6e6757;
+    text-transform: uppercase;
+  }
+  .topbar-brand {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    color: #15140f;
+    font-size: 14px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* Hero */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: end;
+    padding: 120px 0 78px;
+    border-bottom: 1px solid rgba(21,20,15,0.14);
+  }
+  .hero h1 {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 96px;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    font-weight: 500;
+    margin: 0;
+  }
+  .hero h1 em {
+    color: oklch(55% 0.12 50);
+    font-style: italic;
+    font-family: "Newsreader", serif;
+    font-weight: 400;
+  }
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-bottom: 12px;
+  }
+  .portrait {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0.08);
+  }
+  .hero-right p {
+    font-size: 19px;
+    line-height: 1.55;
+    color: #15140f;
+    text-wrap: pretty;
+    margin: 0;
+  }
+
+  /* TOC */
+  .toc {
+    display: grid;
+    grid-template-columns: 60px 1fr 100px;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(21,20,15,0.14);
+  }
+  .toc-mono {
+    padding: 14px 0;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 13px;
+    color: #6e6757;
+    letter-spacing: 0.06em;
+  }
+  .toc-title {
+    padding: 14px 0;
+    color: #15140f;
+    font-family: "Newsreader", serif;
+    font-size: 18px;
+  }
+  .toc-page {
+    padding: 14px 0;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 13px;
+    color: #6e6757;
+    letter-spacing: 0.06em;
+    text-align: right;
+  }
+
+  /* Section header */
+  .section-head {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    align-items: baseline;
+    padding-top: 80px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(21,20,15,0.14);
+    margin-bottom: 32px;
+  }
+  .section-num {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 13px;
+    color: #6e6757;
+    letter-spacing: 0.08em;
+  }
+  .section-title {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  /* Body text */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 720px);
+    gap: 24px;
+  }
+  .pull {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #6e6757;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .body-text {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #15140f;
+    margin: 0 0 1.2em;
+    text-wrap: pretty;
+  }
+  .body-text:last-child { margin-bottom: 0; }
+
+  /* Project grid */
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: rgba(21,20,15,0.18);
+    border: 1px solid rgba(21,20,15,0.18);
+  }
+  .proj-card {
+    background: #f3ede2;
+    padding: 32px 28px;
+    cursor: default;
+    transition: background .25s ease;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+  }
+  .proj-card:hover { background: #ebe4d6; }
+  .proj-head {
+    display: flex;
+    justify-content: space-between;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    color: #6e6757;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 28px;
+  }
+  .proj-title {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+    transition: color .2s;
+    color: #15140f;
+  }
+  .proj-card:hover .proj-title { color: oklch(55% 0.12 50); }
+  .proj-desc {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    color: #15140f;
+    text-wrap: pretty;
+  }
+
+  /* Contact */
+  .contact-list {
+    display: grid;
+    grid-template-columns: 60px 200px 1fr 1fr;
+  }
+  .contact-cell {
+    padding: 22px 0;
+    border-top: 1px solid rgba(21,20,15,0.14);
+    font-size: 18px;
+  }
+  .contact-cell-mono {
+    padding: 22px 0;
+    border-top: 1px solid rgba(21,20,15,0.14);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    color: #6e6757;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .contact-cell-label {
+    padding: 22px 0;
+    border-top: 1px solid rgba(21,20,15,0.14);
+    font-family: "Inter Tight", sans-serif;
+    font-size: 13px;
+    color: #6e6757;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .contact-cell.last,
+  .contact-cell-mono.last,
+  .contact-cell-label.last {
+    border-bottom: 1px solid rgba(21,20,15,0.14);
+  }
+  .contact-cell-mono.align-right { text-align: right; }
+
+  /* Copy button */
+  .copy-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #15140f;
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: left;
+    transition: color .2s;
+  }
+  .copy-btn:hover, .copy-btn.copied { color: oklch(55% 0.12 50); }
+
+  /* Links */
+  a.ext-link {
+    color: #15140f;
+    text-decoration: none;
+    transition: color .2s;
+  }
+  a.ext-link:hover { color: oklch(55% 0.12 50); }
+
+  /* Footer */
+  .footer {
+    padding-top: 80px;
+    margin-top: 80px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    color: #6e6757;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(21,20,15,0.14);
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-80 {
+    transition-delay: 80ms;
+  }
+
+  @media (max-width: 900px) {
+    .site { padding: 40px 24px 80px; }
+    .hero { grid-template-columns: 1fr; gap: 40px; padding: 80px 0 56px; }
+    .hero h1 { font-size: 60px; }
+    .contact-list { grid-template-columns: 48px 1fr; }
+    .contact-cell-mono.align-right, .contact-cell-label:nth-child(4n), .contact-cell:nth-child(4n), .contact-cell-mono:nth-child(4n) { display: none; }
+    .body-grid { grid-template-columns: 1fr; }
+    .body-grid > span:first-child { display: none; }
+    .section-head { grid-template-columns: 48px 1fr; }
+    .toc { grid-template-columns: 48px 1fr; }
+    .toc-page { display: none; }
+    .proj-grid { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="logo">
-            <a href="#">
-                <img class="logoImg" src="dist/img/logo-plain.PNG">
-            </a>
+<div class="site">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <span class="topbar-brand">Kat Yeh</span>
+    <span>Index · v2026.1</span>
+  </div>
+
+  <!-- Hero -->
+  <div class="reveal">
+    <div class="hero">
+      <h1>Building at<br>the <em>intersection</em><br>of AI, product,<br>and systems.</h1>
+      <div class="hero-right">
+        <img src="assets/portrait.png" alt="Kat Yeh" class="portrait" />
+        <p>I work across marketing, business, engineering, and AI. I'm interested in how new tools move from early experiments into real workflows people actually use.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="reveal reveal-delay-80">
+    <div class="toc">
+      <span class="toc-mono">01</span>
+      <span class="toc-title">About</span>
+      <span class="toc-page">p. 01</span>
+
+      <span class="toc-mono">02</span>
+      <span class="toc-title">Contact</span>
+      <span class="toc-page">p. 02</span>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="reveal">
+    <div class="section-head">
+      <span class="section-num">§ 01</span>
+      <h2 class="section-title">About</h2>
+    </div>
+    <div class="body-grid">
+      <span></span>
+      <div>
+        <div class="pull">The short version</div>
+        <p class="body-text">I'm a software engineer currently building GTM AI tools and workflows. My background is a mix of marketing, business, and engineering, which gives me a practical lens on software: I care not only about how systems are built, but whether they solve real problems, change behavior, and create leverage.</p>
+        <p class="body-text">I'm a first-generation Asian American and the daughter of immigrants. I grew up with parents who taught me to work hard, be resourceful, and take opportunities seriously. That has shaped how I move through my career, and made me interested in how people build momentum without always having a clear roadmap.</p>
+        <p class="body-text">Lately I've been interested in how AI can help people turn messy, repeated work into reliable, repeatable workflows.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Selected Work -->
+  <!--
+  <div class="reveal">
+    <div class="section-head">
+      <span class="section-num">§ 02</span>
+      <h2 class="section-title">Selected Work</h2>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-head">
+          <span>01</span><span>GTM · AI</span><span>2026</span>
         </div>
-
-        <input type="checkbox" class="menu-btn" id="menu-btn">
-        <label for="menu-btn" class="menu-icon">
-            <span class="menu-icon__line"></span>
-        </label>
-
-        <ul class="nav-links">
-            <li class="nav-link">
-                <a class="menu-link" href="#home">Home</a>
-            </li>
-            <li class="nav-link">
-                <a class="menu-link" href="#blog">Blog</a>
-            </li>
-            <li class="nav-link">
-                <a class="menu-link" href="#about">About</a>
-            </li>
-            <li class="nav-link">
-                <a class="menu-link" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-link">
-                <a class="menu-link" href="#contact">Contact</a>
-            </li>
-        </ul>
-    </header>
-
-    <!-- Introduction -->
-    <section class="hero" id="home">
-        <div class="logo-container">
-            <div class="logo">
-                <img class="main-logo" src="dist/img/logo.PNG">
-            </div>
-            <div class="main-flex">
-                <div class="main-grid">
-                    <div class="main-grid-item message">
-                        <h1>Hello, I'm Kathleen.</h1>
-                        <h4>Full Stack Software Engineer</h4>
-                        <!-- <button class="cv-btn">Download CV</button> -->
-                        <a download="" href="assets/KathleenYeh_Resume.pdf" class="button">Download CV</a>
-                    </div>
-                    <div class="main-grid-item">
-                        <img class="my-pic" src="dist/img/kathleen.jpg">
-                    </div>
-                </div>
-                <!-- <div class="cta"> -->
-                    <!-- <a href="#" class="btn">Book now</a> -->
-                <!-- </div> -->
-            </div>
+        <div>
+          <h3 class="proj-title">Pipeline Composer</h3>
+          <p class="proj-desc">An AI workspace that drafts, scores, and routes outbound sequences from raw account context.</p>
         </div>
-    </section>
-
-    <!-- wave -->
-    <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: darkgray;"></path></svg></div>
-
-    <!-- Blog -->
-    <section class="blog" id="blog">
-        <h1 class="section-title">Blog Coming Soon!</h1>
-        <div class="blog__container bd-grid">
-                <div class="blog__content">
-                    <a href="pages/dec2020.html"><img src="dist/img/stock2.jpg" alt="" class="blog__img"></a>
-                        <div class="blog__data">
-                             <a href="#pages/dec2020.html" class="blog__title"><h2 class="blog__title">About Me</h2></a>
-                             <div class="blog-item-excerpt">
-                                 <p>Coming Soon!</p>
-                                 <!-- <p>Welcome to my page! Kicking off my first blog post with an intro to who I am, and the purpose of this site.</p> -->
-                             </div>
-                             <!-- <div class="read-more"> -->
-                                 <!-- <a href="#pages/dec2020.html" class="read-more-btn">Read More --></a> -->
-                             <!-- </div> -->
-                             <span class="blog-item-info">
-                                 <a href="#blog" class=blog-item--author>Kathleen Yeh</a>
-                                 <span>∙</span>
-                                 <time class="blog-item-date" datetime="2020-11-20">November 20, 2020</time>
-                             </span>
-                         </div>
-                </div>
-                <div class="blog__content">
-                   <a href="#"><img src="dist/img/stock2.jpg" alt="" class="blog__img"></a>
-                       <div class="blog__data">
-                            <a href="#" class="blog__title"><h2 class="blog__title">My Experience Attending a Coding Bootcamp</h2></a>
-                            <div class="blog-item-excerpt">
-                                <p>Coming Soon!</p>
-                                <!-- <p>How I got started and an intro to my journey in coding.</p> -->
-                            </div>
-                            <!-- <div class="read-more"> -->
-                                <!-- <a href="#" class="read-more-btn">Read More --></a> -->
-                            <!-- </div> -->
-                            <span class="blog-item-info">
-                                <a href="#blog" class=blog-item--author>Kathleen Yeh</a>
-                                <span>∙</span>
-                                <time class="blog-item-date" datetime="2020-11-20">November 20, 2020</time>
-                            </span>
-                        </div>
-                </div>
-                <div class="blog__content">
-                    <a href="#"><img src="dist/img/stock2.jpg" alt="" class="blog__img"></a>
-                        <div class="blog__data">
-                             <a href="#" class="blog__title"><h2 class="blog__title">What is Object Oriented Programming?</h2></a>
-                             <div class="blog-item-excerpt">
-                                 <p>Coming Soon!</p>
-                             </div>
-                             <!-- <div class="read-more"> -->
-                                 <!-- <a href="#" class="read-more-btn">Read More</a> --> -->
-                             <!-- </div> -->
-                             <span class="blog-item-info">
-                                 <a href="#blog" class=blog-item--author>Kathleen Yeh</a>
-                                 <span>∙</span>
-                                 <time class="blog-item-date" datetime="2020-11-20">November 20, 2020</time>
-                             </span>
-                         </div>
-                 </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-head">
+          <span>02</span><span>Revenue · Triage</span><span>2025</span>
         </div>
-    </section>
-
-    <!-- wave -->
-    <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: darkgray;"></path></svg></div>
-
-
-    <!-- About me -->
-    <section class="about-me" id="about">
-        <h1 class="section-title">About</h1>
-        <div class="about-img-container">
-            <img class="about-pic" src="dist/img/kathleen02.jpg">
+        <div>
+          <h3 class="proj-title">Signal Inbox</h3>
+          <p class="proj-desc">A triage tool that turns scattered intent signals into a single ranked feed for revenue teams.</p>
         </div>
-        <div class="about-me__body">
-            <h3>My Story</h3>
-            <p>As a first-generation Asian-American, I watched my parents start over in a foreign country with a language barrier and lack of resources and support. Through their sacrifice, I learned the value of hard work and dedication at a very young age.</p>
-            <p>My journey has been what some would call unconventional - as a young woman lacking guidance, I struggled finding my place in the world. At age 16, I secured my first job and worked my way through high school and college. At 21, I received my B.A. in Business Management and Marketing, from the University of Washington. Post-graduation, I secured a job and continued to further my education by taking online courses and fully immersing myself in code during any free time. At 22, I decided to start over and pursue my passion for Software Engineering.
-            </p>
-            <p>I try to learn from every obstacle that I face, and turn every outcome into an achievement, or an experience to learn from.
-            </p>
-            <h3>About Me</h3>
-            <p>I am a Software Engineer with a previous marketing background, living in Seattle, Washington. While my path to software engineering hasn't been the most straight forward, I am grateful for my experience in both business and tech as they have offered me unique perspectives. Having experiences in both industries, I believe I bring a unique value since I am constantly trying to improve with an engineer-mindset and a business-forward drive.</p>
-            <p>As a female minority in the industry, I take pride in promoting positivity and confidence to others in the field. I strive to be a lifelong learner and find new ways to achieve personal growth. </p>
-            <h3>My Mission</h3>
-            <p>I find coding extremely challenging and equally as rewarding. My goal is to bring value to a company that challenges me daily, with an enthusiastic team/environment that I can learn from.</p>
-            <p>The purpose of my blog is to provide an inspirational space for femininity and cultivate a community of strong women. It is a platform to share my experiences and insight during my continuing journey. I want to provide encouragement and become a resource to anyone that is interested in exploring the tech field.</p>
+      </div>
+      <div class="proj-card">
+        <div class="proj-head">
+          <span>03</span><span>Marketing · Tools</span><span>2025</span>
         </div>
-    </section>
-
-    <!-- Portfolio -->
-    <section class="portfolio" id="portfolio">
-        <h1 class="section-title">Portfolio</h1>
-
-        <div class="portfolio__container bd-grid">
-
-            <div class="portfolio__content">
-                <a href="#"><img src="dist/img/kafei.png" alt="" class="portfolio__img"></a>
-                    <div class="portfolio__data">
-                        <a href="#"><h2 class="portfolio__title">Kafei</h2></a>
-                        <span class="portfolio__subtitle">Platform for posting photos and suporting your favorite content creators. Built using a Python / Flask backend and JavaScript / React frontend.</span>
-                        <a href="https://ka-fei.herokuapp.com/" class="button button-link">Live Link</a>
-                    </div>
-             </div>
-
-            <div class="portfolio__content">
-               <a href="#"><img src="dist/img/medium-splash.png" alt="" class="portfolio__img readium__img"></a>
-                   <div class="portfolio__data">
-                       <a href="#"><h2 class="portfolio__title">Readium</h2></a>
-                       <span class="portfolio__subtitle">Full stack development of a web application clone using Express, JavaScript, and Sequelize.</span>
-                       <a href="https://readiumapp.herokuapp.com/" class="button button-link">Live Link</a>
-                   </div>
-            </div>
-
-             <div class="portfolio__content">
-                <a href="#"><img src="dist/img/buskerphoto.png" alt="" class="portfolio__img"></a>
-                    <div class="portfolio__data">
-                        <a href="#"><h2 class="portfolio__title">Busker</h2></a>
-                        <span class="portfolio__subtitle">Busker is an online platform where artists can upload and share their originally-created sounds. Built using a Python / Flask back-end and JavaScript / React frontend.</span>
-                        <a href="https://busker-app.herokuapp.com/" class="button button-link">Live Link</a>
-                    </div>
-             </div>
-
+        <div>
+          <h3 class="proj-title">Brief.exe</h3>
+          <p class="proj-desc">A drafting interface where marketers iterate on positioning with an opinionated assistant.</p>
         </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <h1 class="section-title">Contact</h1>
-        <h3 class="section-subtitle">Let's get in touch!</h3>
-
-        <div class="contact-break__container">
-            <hr class="contact-break">
+      </div>
+      <div class="proj-card">
+        <div class="proj-head">
+          <span>04</span><span>Internal · Knowledge</span><span>2024</span>
         </div>
-
-        <div class="contact__container">
-            <form action="https://formspree.io/f/xrgolyly" class="contact-form" method="post">
-                <label for="name">Name</label>
-                <fieldset class="name__container">
-                    <input type="text" name="fname" class="contact-form-text first-name" placeholder="First Name" required>
-                    <input type="text" name="lname" class="contact-form-text last-name" placeholder="Last Name" required>
-                </fieldset>
-                <label for="name">Email Address</label>
-                <input type="text" name="_replyto" class="contact-form-text" placeholder="Email Address" required>
-                <label for="name">Subject</label>
-                <input type="text" name="_subject" class="contact-form-text" placeholder="Subject" required>
-                <label for="name">Message</label>
-                <textarea class="contact-form-text" name="_message" placeholder="Message" required></textarea>
-                <input type="submit" class="contact-form-btn" value="Submit">
-            </form>
+        <div>
+          <h3 class="proj-title">Atlas Notes</h3>
+          <p class="proj-desc">An internal knowledge layer that surfaces the right document at the right moment.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+  -->
 
-     <!-- Footer -->
-     <footer class="footer">
-         <div class="social-links">
-            <ul class="social-list">
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://github.com/katyeh">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
-                <li class="social-list__item">
-                    <a class="social-list__link" href="mailto:kathleenyeh1@gmail.com">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </li>
-                <li class="social-list__item">
-                    <a class="social-list__link" href="tel:206-604-2354">
-                        <i class="fas fa-phone-alt"></i>
-                    </a>
-                </li>
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://www.linkedin.com/in/katyeh/">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://angel.co/u/kathleen-yeh-1">
-                        <i class="fab fa-angellist"></i>
-                    </a>
-                </li>
-            </div>
-        </ul>
-    </footer>
+  <!-- Contact -->
+  <div class="reveal">
+    <div class="section-head">
+      <span class="section-num">§ 02</span>
+      <h2 class="section-title">Contact</h2>
+    </div>
+    <div class="contact-list">
+      <span class="contact-cell-mono">01</span>
+      <span class="contact-cell-label">Email · preferred</span>
+      <span class="contact-cell">
+        <button class="copy-btn" id="copy-email" aria-label="Copy email address">kathleenyeh1@gmail.com</button>
+      </span>
+      <span class="contact-cell-mono align-right">click to copy</span>
 
-    <script src="dist/js/main.js"></script>
-    <script src="dist/js/menu.js"></script>
+      <span class="contact-cell-mono">02</span>
+      <span class="contact-cell-label">GitHub</span>
+      <span class="contact-cell">
+        <a class="ext-link" href="https://github.com/katyeh" target="_blank" rel="noreferrer">github.com/katyeh</a>
+      </span>
+      <span class="contact-cell-mono align-right">CODE / PROJECTS</span>
+
+      <span class="contact-cell-mono last">03</span>
+      <span class="contact-cell-label last">LinkedIn</span>
+      <span class="contact-cell last">
+        <a class="ext-link" href="https://linkedin.com/in/katyeh" target="_blank" rel="noreferrer">linkedin.com/in/katyeh</a>
+      </span>
+      <span class="contact-cell-mono align-right last">CONNECT</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>© 2026 Kat Yeh</span>
+    <span></span>
+  </div>
+
+</div>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+  reveals.forEach((el) => io.observe(el));
+
+  // Copy email
+  const copyBtn = document.getElementById('copy-email');
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText('kathleenyeh1@gmail.com');
+      copyBtn.textContent = 'copied ✓';
+      copyBtn.classList.add('copied');
+      setTimeout(() => {
+        copyBtn.textContent = 'kathleenyeh1@gmail.com';
+        copyBtn.classList.remove('copied');
+      }, 1800);
+    } catch (e) {}
+  });
+</script>
 </body>
 </html>
